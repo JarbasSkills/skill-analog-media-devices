@@ -11,7 +11,7 @@ Play analog media with mycroft!
 
 Have a VHS player? Retro consoles? This is the skill for you!
 
-![](./dreamcast.GIF)
+![](./dreamcast.gif)
 
 # Platform support
 
