@@ -1,4 +1,4 @@
-# <img src='./ui/easycap.png' card_color='#40DBB0' width='50' height='50' style='vertical-align:bottom'/>Analog Media Devices
+# <img src='https://github.com/OpenVoiceOS/ovos-PHAL-plugin-analog-media-devices/blob/dev/ovos_PHAL_plugin_analog_media_devices/res/soundcard.png?raw=true' card_color='#40DBB0' width='50' height='50' style='vertical-align:bottom'/>Analog Media Devices
 
 Analog Media Devices OCP Skill
 
