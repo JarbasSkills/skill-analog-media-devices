@@ -4,6 +4,7 @@ from ovos_plugin_common_play import PlaybackType, MediaType
 from ovos_workshop.skills.common_play import OVOSCommonPlaybackSkill, \
     ocp_search, ocp_featured_media, ocp_play, ocp_pause, ocp_resume
 from ovos_PHAL_plugin_analog_media_devices.analog import get_device_json, AnalogAudio, AnalogVideo, AnalogVideoAudio
+from mycroft_bus_client.message import Message
 
 
 class AnalogMediaSkill(OVOSCommonPlaybackSkill):
@@ -19,7 +20,7 @@ class AnalogMediaSkill(OVOSCommonPlaybackSkill):
         # TODO move this to base class  OVOSCommonPlaybackSkill
         skill_id = message.data.get("__from")
         if skill_id == self.skill_id or skill_id == "ovos.common_play":
-            self.bus.emit(message.forward("ovos.common_play.analog.stop"))
+            self.stop()
 
     @ocp_play()
     def open_uvc(self, message=None):
@@ -53,6 +54,9 @@ class AnalogMediaSkill(OVOSCommonPlaybackSkill):
                 }
             )
         return devices
+
+    def stop(self):
+        self.bus.emit(Message("ovos.common_play.analog.stop"))
 
 
 def create_skill():
